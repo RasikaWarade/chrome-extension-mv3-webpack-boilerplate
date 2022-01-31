@@ -1,4 +1,5 @@
-# Chrome Extension Manifest Version 3 + Webpack  ( Boilerplate Code )
+# Chrome Extension Manifest Version 3 + Webpack  
+## Boilerplate Code
 
 This Chrome Extension boilerplate uses Webpack to speed up the process of writing modular Javascript code, loading HTML and CSS easily, and re-rendering the browser based on changes.
 
