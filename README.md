@@ -55,7 +55,15 @@ This script contains all the common bundler config common between development an
 
 > `src`
 
-All the html/css files and manifest.json are added in this directory.
+All your extension's development code must be placed in src folder, including the extension manifest.
+
+The boilerplate is already prepared to have a popup, a options page and a background page. You can easily customize this.
+
+Includes:
+- background.js
+- content.js
+- popup (js + html + css)
+- options (js + html)
 
 > `src/manifest.json`
 
@@ -69,7 +77,11 @@ This is the entry point for your extension.
 2. Run command `npm install` to install all node-modules / dependencies
 4. Run command `npm run build`
 5. This will build the `dist` folder
-6. Load the Chrome Extension you just build by pointing to this `dist` folder
+6. Load your extension on Chrome following:
+   1. Access `chrome://extensions/`
+   2. Check `Developer mode`
+   3. Click on `Load unpacked` extension
+   4. Select the `dist` folder
 
 Note: `gitignore` will help ignore the `node_modules` and `dist` folder to be pushed to the github
 
