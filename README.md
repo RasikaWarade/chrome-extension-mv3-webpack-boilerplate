@@ -39,6 +39,7 @@ For the initial setup, below webpack bundles were installed:
 
 `npm install --save-dev webpack webpack-cli html-webpack-plugin clean-webpack-plugin copy-webpack-plugin`
 
+## Configuration
 
 > `webpack.development.js`
 
@@ -62,7 +63,7 @@ This is the entry point for your extension.
 
 
 
-## How to use it
+# How to use it
 
 1. Clone the repo
 2. Run command `npm install` to install all node-modules / dependencies
@@ -72,3 +73,5 @@ This is the entry point for your extension.
 
 Note: `gitignore` will help ignore the `node_modules` and `dist` folder to be pushed to the github
 
+-----
+[Blog](https://rasikawarade.github.io/think-rethink-reinforce/chrome-extension/webpack/2022/01/30/chrome-webpack.html) | [Rasika Warade](https://rasikawarade.github.io/)
