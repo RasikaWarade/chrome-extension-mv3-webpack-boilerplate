@@ -1,23 +1,74 @@
 # Chrome Extension Manifest Version 3 + Webpack  
-## Boilerplate Code
 
-This Chrome Extension boilerplate uses Webpack to speed up the process of writing modular Javascript code, loading HTML and CSS easily, and re-rendering the browser based on changes.
+## Boilerplate Code Brief
+
+This Chrome Extension boilerplate uses Webpack to speed up the process of writing modular Javascript code, loading HTML and CSS easily, and automatically refresh the browser based on changes.
 
 ## Why?
 
-As per [Chrome Extension Timeline](https://developer.chrome.com/docs/extensions/mv3/mv2-sunset/), all the extensions supporting Manifest Version v2 are sunsetting  in Jan 2023 and for new extensions it is now a hard requirement to move to Manifest Version V3.
+As per the [Chrome Extension Timeline](https://developer.chrome.com/docs/extensions/mv3/mv2-sunset/), all extensions supporting Manifest Version v2 will sunset in Jan 2023, and for new extensions, it has now become a requirement to move to Manifest Version V3.
 
-The important security change from the recent release of Chrome Extension Manifest Version v3 is that [remotely hosted code](https://developer.chrome.com/docs/extensions/mv3/intro/mv3-overview/#remotely-hosted-code) like Javascript is not allowed. This will cause a problem if your codebase for extension is not bundled and structured in a modular fashion. Definately, it is a problem for a begineer like me and there is no guideline I could find to build that setup. Also I was new to webpack when I started working on building my own Chrome Extension, so I believe most of the new beginners will hit this problem.
+Google Chrome Extension Manifest v3's most significant security change is that [remotely hosted code](https://developer.chrome.com/docs/extensions/mv3/intro/mv3-overview/#remotely-hosted-code), such as Javascript, is now not allowed. If your extension codebase is not bundled and structured in a modular fashion, this can lead to problems. A beginner like me will definitely have a hard time building a setup like that without any guideline. 
+
+When I built my Chrome Extension, I had limited experience with webpack, and I believe that new beginners may have the same issue, which is why I decided to compile this resource.
 
 
+# Structure
 
-Install Setup Done Webpack and webpack bundles 
+I am assuming you have taken look for introduction at the [Chrome Extension docs](https://developer.chrome.com/docs/extensions/mv3/getstarted/) and [Webpack docs](https://webpack.js.org/).
+
+Also, if you are beginner, I am assuming you probably would have worked on the [Getting Started Guide](https://developer.chrome.com/docs/extensions/mv3/getstarted/) for extension. If not, I would give a quick look at it as well.
+
+**This repo bundles the code explained in the [Getting Started Guide](https://developer.chrome.com/docs/extensions/mv3/getstarted/) with Webpack.**
+
+## Initial Setup
+
+Make sure you have latest [Node.js](https://formulae.brew.sh/formula/node) installed.
+
+My current version:
+```
+(base) ➜  chrome-extension-mv3-webpack-boilerplate git:(main) ✗ node --version
+v16.13.1
+(base) ➜  chrome-extension-mv3-webpack-boilerplate git:(main) ✗ npm --version
+8.1.2
+
+```
+
+
+For the initial setup, below webpack bundles were installed:
 
 `npm install --save-dev webpack webpack-cli html-webpack-plugin clean-webpack-plugin copy-webpack-plugin`
 
 
-Commands
+> `webpack.development.js`
 
-1. Run `npm install`
-2. Run `npm run build`
-3. Run `npm run release`
+For Development Purposes, you can configure this script and run the command `npm run build` to reflect changes.
+
+> `webpack.production.js`
+
+For production release, you can configure this script and run the command `npm run release`  to reflect changes.
+
+> `webpack.common.js`
+
+This script contains all the common bundler config common between development and production scripts above.
+
+> `src`
+
+All the html/css files and manifest.json are added in this directory.
+
+> `src/manifest.json`
+
+This is the entry point for your extension.
+
+
+
+## How to use it
+
+1. Clone the repo
+2. Run command `npm install` to install all node-modules / dependencies
+4. Run command `npm run build`
+5. This will build the `dist` folder
+6. Load the Chrome Extension you just build by pointing to this `dist` folder
+
+Note: `gitignore` will help ignore the `node_modules` and `dist` folder to be pushed to the github
+
